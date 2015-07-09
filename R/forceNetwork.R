@@ -54,6 +54,9 @@
 #' \url{http://bl.ocks.org/mbostock/1129492}.
 #' @param opacityNoHover numeric value of the proportion opaque for node labels text
 #' when the mouse is not hovering over them
+#' @param clickAction A JavaScript expression created by JS() for action on the event 
+#' of a node being clicked
+#' 
 #'
 #' @examples
 #' #### Tabular data example.
@@ -137,7 +140,8 @@ forceNetwork <- function(Links,
                          zoom = FALSE,
                          legend = FALSE,
                          bounded = FALSE,
-                         opacityNoHover = 0)
+                         opacityNoHover = 0,
+                         clickAction = NULL)
 {
         # Hack for UI consistency. Think of improving.
         colourScale <- as.character(colourScale)
@@ -187,7 +191,8 @@ forceNetwork <- function(Links,
                 nodesize = nodesize,
                 radiusCalculation = radiusCalculation,
                 bounded = bounded,
-                opacityNoHover = opacityNoHover
+                opacityNoHover = opacityNoHover,
+                clickAction = clickAction
         )
 
         # create widget
