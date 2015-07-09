@@ -15,7 +15,7 @@ forceNetwork(Links, Nodes, Source, Target, Value, NodeID, Nodesize, Group,
   linkWidth = JS("function(d) { return Math.sqrt(d.value); }"),
   radiusCalculation = JS(" Math.sqrt(d.nodesize)+6"), charge = -120,
   linkColour = "#666", opacity = 0.6, zoom = FALSE, legend = FALSE,
-  bounded = FALSE, opacityNoHover = 0)
+  bounded = FALSE, opacityNoHover = 0, clickAction = NULL)
 }
 \arguments{
 \item{Links}{a data frame object with the links between the nodes. It should
@@ -94,6 +94,8 @@ zooming}
 
 \item{opacityNoHover}{numeric value of the proportion opaque for node labels text
 when the mouse is not hovering over them}
+
+\item{clickAction}{A JavaScript expression for evaluating when a node is clicked}
 }
 \description{
 Create a D3 JavaScript force directed network graph.
