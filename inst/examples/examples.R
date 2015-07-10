@@ -22,7 +22,7 @@ forceNetwork(Links = MisLinks, Nodes = MisNodes, Source = "source",
              Target = "target", Value = "value", NodeID = "name",
              Group = "group", opacity = 1, zoom = F, bounded = T)
 
-# with a simple click action - just make the circles bigger
+# with a simple click action - make the circles bigger when clicked
 MyClickScript <- 
   '      d3.select(this).select("circle").transition()
         .duration(750)
@@ -34,6 +34,9 @@ forceNetwork(Links = MisLinks, Nodes = MisNodes, Source = "source",
              clickAction = MyClickScript)
 
 # showing how you can re-use the name of the clicked-on node (which is 'd')
+# You are unlikely to want to do this pop-up alert, but you might want 
+# instead to use Shiny.onInputChange() to allocate d.XXX to an element
+# input$XXX for user in a Shiny app.
 MyClickScript <- 'alert("You clicked " + d.name + " which is in row " + (d.index + 1) +
                         " of your original R data frame");'
 forceNetwork(Links = MisLinks, Nodes = MisNodes, Source = "source",

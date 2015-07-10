@@ -52,11 +52,10 @@
 #' @param bounded logical value to enable (\code{TRUE}) or disable
 #' (\code{FALSE}) the bounding box limiting the graph's extent. See
 #' \url{http://bl.ocks.org/mbostock/1129492}.
-#' @param opacityNoHover numeric value of the proportion opaque for node labels text
-#' when the mouse is not hovering over them
+#' @param opacityNoHover numeric value of the opacity proportion for node labels 
+#' text when the mouse is not hovering over them
 #' @param clickAction A JavaScript expression for evaluating when a node is clicked
 #' 
-#'
 #' @examples
 #' #### Tabular data example.
 #' # Load data
