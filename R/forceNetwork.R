@@ -54,7 +54,7 @@
 #' \url{http://bl.ocks.org/mbostock/1129492}.
 #' @param opacityNoHover numeric value of the opacity proportion for node labels 
 #' text when the mouse is not hovering over them
-#' @param clickAction A JavaScript expression for evaluating when a node is clicked
+#' @param clickAction A JavaScript expression to evaluate when a node is clicked
 #' 
 #' @examples
 #' #### Tabular data example.
@@ -106,6 +106,21 @@
 #'              Target = "target", Value = "value", NodeID = "name",
 #'              Group = "group", opacity = 0.4, bounded = TRUE,
 #'              opacityNoHover = TRUE)
+#'              
+#'              
+#' # Create graph with alert pop-up when a node is clicked.  You're 
+#' # unlikely to want to do exactly this, but you might use
+#' # Shiny.onInputChange() to allocate d.XXX to an element of input
+#' # for use in a Shiny app.
+#' MyClickScript <- 'alert("You clicked " + d.name + " which is in row " + 
+#'        (d.index + 1) +  " of your original R data frame");'
+#' forceNetwork(Links = MisLinks, Nodes = MisNodes, Source = "source",
+#'              Target = "target", Value = "value", NodeID = "name",
+#'              Group = "group", opacity = 1, zoom = F, bounded = T,
+#'              clickAction = MyClickScript)
+#'              
+#'              
+#'              
 #' }
 #'
 
